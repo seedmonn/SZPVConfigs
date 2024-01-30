@@ -1,0 +1,70 @@
+{
+  // настройки хоста приложения
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "AllowedHosts": "*",
+  "Kestrel": {
+    "Endpoints": {
+      "Http": {
+        "Url": "http://192.168.0.91:1680"
+      }
+    }
+  },
+
+  // настройки приложения
+  "UrlEpgu": "https://r78-pilot.n3zdrav.ru/hub3",
+  "DefaultUserLogin": "sa",
+  "DefaultUserPassword": "sa",
+  "LogDisabled": false,
+  "LogAllErrors": true,
+  "ShowValidatorMessages": false,
+  "ShowWinForms": false,
+  "N3DayOfWeek": 0,
+  "N3PeriodInDays": 21,
+  "N3TimeOfDayInHours": 21,
+  "LazyBuildMetadomain": false,
+
+  "ConnectionInfo": {
+    "ApplicationName": "Kosta Appointment WebAPI Service",
+    "PacketSize": "4096",
+    "PersistSecurityInfo": "false",
+    "ServerName": "SQLSRV\\SQL2017",
+    "DatabaseName": "GVV_111021",
+    "TraceQueryEnable": "false",
+    "ProviderName": "System.Data.SqlClient",
+    "IntegratedSecurity": "false"
+  },
+
+  // настройки REST сервиса
+  "Service": {
+    // базовая часть адреса между адресом хоста и конечной точкой (если не устраивает адрес по умолчанию)
+    "BasePath": "/Avicenna/Appointment_EPGU",
+    "Swagger": {
+      "Enabled": true
+    }
+  },
+
+  //настройки WCF клиентов
+  "Clients": {
+    "DirectionsService.IMqService": {
+      "Address": "http://r47-rc.zdrav.netrika.ru/queues/MqService.svc",
+      "Binding": {
+        "MaxBufferSize": 2147483647,
+        "MaxBufferPoolSize": 2147483647,
+        "MaxReceivedMessageSize": 2147483647
+      }
+    },
+    "DirectionsServiceSpb.IMqService": {
+      "Address": "http://r78-pilot.n3zdrav.ru/queues/MqService.svc",
+      "Binding": {
+        "MaxBufferSize": 2147483647,
+        "MaxBufferPoolSize": 2147483647,
+        "MaxReceivedMessageSize": 2147483647
+      }
+    }
+  }
+}

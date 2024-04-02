@@ -1,65 +1,58 @@
 {
-  // настройки хоста приложения
-  "Logging": {
-    "LogLevel": {
-      "Default": "Information",
-      "Microsoft.AspNetCore": "Warning"
-    }
-  },
-  "AllowedHosts": "*",
-
-  "Kestrel": {
-    "Endpoints": {
-      "Http": {
-        "Url": "http://192.168.0.91:1688"
-      }
-    }
-  },
-
-  // настройки приложения
-  "ClientValidationEnabled": true,
-  "LogAllErrors": false,
-  "OurEnterpriseID": "7BDE348F-CC01-4125-AD23-6DC40C9183B5",
-  "DefaultUserLogin": "sa",
-  "DefaultUserPassword": "sa",
-  "ShowValidatorMessages": false,
-  "ShowWinForms": false,
-  "HideServiceCases": true,
-  "DisableLogFile": true,
-  "N3DayOfWeek": 0,
-  "N3PeriodInDays": 21,
-  "N3TimeOfDayInHours": 21,
-  "AllowFreeTicketOut": true,
-  "N3CacheTime": 60,
-  "LazyBuildMetadomain": false,
-
-  "ConnectionInfo": {
-    "ApplicationName": "Kosta N3v2 Service",
-    "PacketSize": "4096",
-    "PersistSecurityInfo": "false",
-    "ServerName": "SQLSRV\\SQL2017",
-    "DatabaseName": "GVV_111021",
-    "TraceQueryEnable": "false",
-    "ProviderName": "System.Data.SqlClient",
-    "IntegratedSecurity": "false"
-  },
-
-  // настройки WCF сервиса
-  "Service": {
-    // относительный адрес сервиса (указываем если не устраивает адрес по умолчанию)
-    "Address": "/WebAppointment/n3service.svc",
-    "ServiceMetadata": {
-      "HttpGetEnabled": true
-    }
-  },
-
-  // настройки WCF клиентов
-  "Clients": {
-    "NetrikaWSLO.IHubService": {
-      "Address": "http://r47-rc.zdrav.netrika.ru/hub25/HubService.svc"
-    },
-    "DirectionsService.IMqService": {
-      "Address": "http://r47-rc.zdrav.netrika.ru/queues/MqService.svc"
-    }
-  }
+	"Logging": {
+		"LogLevel": {
+			"Default": "Information",
+			"Microsoft.AspNetCore": "Warning"
+		}
+	},
+	"AllowedHosts": "*",
+	"Kestrel": {
+		"Endpoints": {
+			"Http": {
+				"Url": "http://192.168.0.91:1688"
+			}
+		}
+	},
+	"ClientValidationEnabled": true,
+	"LogAllErrors": false,
+	"OurEnterpriseID": "7BDE348F-CC01-4125-AD23-6DC40C9183B5",
+	"DefaultUserLogin": "sa",
+	"DefaultUserPassword": "sa",
+	"ShowValidatorMessages": false,
+	"ShowWinForms": false,
+	"HideServiceCases": true,
+	"DisableLogFile": true,
+	"N3DayOfWeek": 0,
+	"N3PeriodInDays": 21,
+	"N3TimeOfDayInHours": 21,
+	"AllowFreeTicketOut": true,
+	"N3CacheTime": 60,
+	"LazyBuildMetadomain": false,
+	"ConnectionInfo": {
+		"ApplicationName": "Kosta N3v2 Service",
+		"PacketSize": "4096",
+		"PersistSecurityInfo": "false",
+		"ServerName": "SQLSRV\\SQL2017",
+		"DatabaseName": "GVV_111021",
+		"TraceQueryEnable": "false",
+		"ProviderName": "System.Data.SqlClient",
+		"IntegratedSecurity": "false"
+	},
+	"Service": {
+		"Address": "/WebAppointment/n3service.svc",
+		"ServiceMetadata": {
+			"HttpGetEnabled": true
+		},
+		"ServiceBinding": {
+			"UseHttp": true
+		}
+	},
+	"Clients": {
+		"NetrikaWSLO.IHubService": {
+			"Address": "http://r47-rc.zdrav.netrika.ru/hub25/HubService.svc"
+		},
+		"DirectionsService.IMqService": {
+			"Address": "http://r47-rc.zdrav.netrika.ru/queues/MqService.svc"
+		}
+	}
 }
